@@ -1,13 +1,13 @@
 import React from 'react';
+//styled-components setup
+import { ThemeProvider } from 'styled-components';
+import { theme } from 'assets/styles/theme';
 
 function Root() {
   return (
-    <div>
-      SIEMA{' '}
-      <strong>
-        co tam <h1>u ciebie</h1>
-      </strong>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>SIEMA COP TAM</div>
+    </ThemeProvider>
   );
 }
 
