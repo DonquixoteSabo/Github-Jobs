@@ -9,7 +9,7 @@ const SearchBar = () => {
   const [inputValue, setInputValue] = useState('');
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(inputValue);
+    // console.log(inputValue);
     setInputValue('');
   };
   return (

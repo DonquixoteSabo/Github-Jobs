@@ -1,4 +1,4 @@
-import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 //helpers
 import { renderWithProviders } from 'helpers/renderWithProviders';
 //components
@@ -10,17 +10,14 @@ describe('SearchBar', () => {
     expect(screen.getByPlaceholderText('Title, companies')).toBeInTheDocument();
     expect(screen.getByText('Search')).toBeInTheDocument();
   });
-  it('clears input after submitting a form', async () => {
+  it('clears input after submitting a form', () => {
     renderWithProviders(<SearchBar />);
     const input = screen.getByPlaceholderText(
       'Title, companies'
     )! as HTMLInputElement;
-    // const button = screen.getByText('Search')! as HTMLButtonElement;
     const form = screen.getByRole('search')! as HTMLFormElement;
     fireEvent.change(input, { target: { value: 'Hello' } });
-    waitFor(() => {
-      fireEvent.submit(form);
-    });
+    fireEvent.submit(form);
 
     expect(input.value).toBe('');
   });
