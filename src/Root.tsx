@@ -5,8 +5,12 @@ import { theme } from 'assets/styles/theme';
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 //react-router-dom setup
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+//templates
 import { MainTemplate } from 'templates/MainTemplate';
-import { Job } from 'components/Job/Job';
+//pages
+import { JobPage } from 'pages/JobPage';
+import { MainPage } from 'pages/MainPage';
+
 function Root() {
   return (
     <ThemeProvider theme={theme}>
@@ -15,10 +19,10 @@ function Root() {
         <MainTemplate>
           <Switch>
             <Route path="/job">
-              <Job />
+              <JobPage />
             </Route>
             <Route path="/">
-              <h1>siema</h1>
+              <MainPage />
             </Route>
           </Switch>
         </MainTemplate>

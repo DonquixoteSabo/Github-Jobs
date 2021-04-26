@@ -5,12 +5,13 @@ import { renderWithProviders } from 'helpers/renderWithProviders';
 import { MainTemplate } from './MainTemplate';
 
 describe('MainTemplate', () => {
-  it('property renders main template', () => {
+  it('renders main template with Header and given child', () => {
     renderWithProviders(
       <MainTemplate>
         <h1>foo</h1>
       </MainTemplate>
     );
     expect(screen.getByText('Github jobs')).toBeInTheDocument();
+    expect(screen.getByText('foo')).toBeInTheDocument();
   });
 });

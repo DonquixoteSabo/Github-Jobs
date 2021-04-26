@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function Job() {
+export function JobPage() {
   return <div>Job page</div>;
 }
