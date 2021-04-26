@@ -6,6 +6,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       blue: string;
+      steelGray: string;
     };
     fontSize: {
       xs: string;
