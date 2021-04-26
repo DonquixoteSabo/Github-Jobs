@@ -1,3 +1,9 @@
-export default function Header() {
-  return <div>Github jobs</div>;
+import { Logo } from './Header.styles';
+
+export function Header() {
+  return (
+    <Logo>
+      <strong>Github</strong> jobs
+    </Logo>
+  );
 }
