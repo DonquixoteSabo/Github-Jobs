@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
-export const Wrapper = styled.section``;
+import backgroundImg from 'assets/img/backgroundImg.png';
+export const Wrapper = styled.section`
+  width: 100%;
+  height: 150px;
+  background-image: url(${backgroundImg});
+  background-size: cover;
+`;
 export const Input = styled.input``;
 export const Button = styled.button``;
 
