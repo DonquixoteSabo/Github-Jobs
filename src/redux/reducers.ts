@@ -12,14 +12,11 @@ const jobSlice = createSlice({
   name: 'jobs',
   initialState,
   reducers: {
-    getJobs(state) {
-      state.jobs = ['siema'];
-    },
-    addJob(state) {
-      state.jobs.push('siema');
+    filterJobs(state) {
+      //yo
     },
   },
 });
 
-export const { getJobs, addJob } = jobSlice.actions;
+export const { filterJobs } = jobSlice.actions;
 export default jobSlice.reducer;
