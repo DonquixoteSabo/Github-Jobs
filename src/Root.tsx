@@ -10,23 +10,28 @@ import { MainTemplate } from 'templates/MainTemplate';
 //pages
 import { JobPage } from 'pages/JobPage';
 import { MainPage } from 'pages/MainPage';
+//redux
+import { store } from 'redux/store';
+import { Provider } from 'react-redux';
 
 function Root() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Router>
-        <MainTemplate>
-          <Switch>
-            <Route path="/job">
-              <JobPage />
-            </Route>
-            <Route path="/">
-              <MainPage />
-            </Route>
-          </Switch>
-        </MainTemplate>
-      </Router>
+      <Provider store={store}>
+        <GlobalStyle />
+        <Router>
+          <MainTemplate>
+            <Switch>
+              <Route path="/job">
+                <JobPage />
+              </Route>
+              <Route path="/">
+                <MainPage />
+              </Route>
+            </Switch>
+          </MainTemplate>
+        </Router>
+      </Provider>
     </ThemeProvider>
   );
 }
