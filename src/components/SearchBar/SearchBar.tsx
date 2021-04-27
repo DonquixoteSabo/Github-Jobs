@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsBag } from 'react-icons/bs';
+import { BiShoppingBag } from 'react-icons/bi';
 
 import styled from 'styled-components';
 import backgroundImg from 'assets/img/backgroundImg.png';
@@ -26,6 +26,14 @@ export const Wrapper = styled.section`
       margin-left: 20px;
       width: 100%;
     }
+    .icon {
+      color: ${({ theme }) => theme.colors.heather};
+      font-weight: 400;
+      font-size: ${({ theme }) => theme.fontSize.xl};
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+      width: 75%;
+    }
   }
 `;
 
@@ -39,6 +47,12 @@ export const Input = styled.input`
     font-size: ${({ theme }) => theme.fontSize.xs};
     color: ${({ theme }) => theme.colors.heather};
   }
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+    padding: 20px 25px;
+    &::placeholder {
+      font-size: ${({ theme }) => theme.fontSize.s};
+    }
+  }
 `;
 export const Button = styled.button`
   padding: 12px 25px;
@@ -49,6 +63,10 @@ export const Button = styled.button`
   color: #fff;
   cursor: pointer;
   border-radius: 4px;
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+    padding: 16px 38px;
+    font-size: ${({ theme }) => theme.fontSize.m};
+  }
 `;
 
 const SearchBar = () => {
@@ -62,7 +80,7 @@ const SearchBar = () => {
     <Wrapper>
       <form className="input-wrapper" onSubmit={handleSubmit} role="search">
         <div>
-          <BsBag />
+          <BiShoppingBag className="icon" />
           <Input
             type="text"
             placeholder="Title, companies, expertise or benefits"
