@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+//types
+import { Job } from 'types/Job';
 //I will change that later;
 interface State {
-  jobs: any[];
-  filteredJobs: any[];
+  jobs: Job[];
+  filteredJobs: Job[];
 }
 
 const initialState = { jobs: [], filteredJobs: [] } as State;
