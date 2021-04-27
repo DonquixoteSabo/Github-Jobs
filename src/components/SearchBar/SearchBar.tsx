@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+//styles
+import { Wrapper, Input, Button } from './SearchBar.styles';
+//icons
+import { BiShoppingBag } from 'react-icons/bi';
+
+const SearchBar = () => {
+  const [inputValue, setInputValue] = useState('');
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // console.log(inputValue);
+    setInputValue('');
+  };
+  return (
+    <Wrapper>
+      <form className="input-wrapper" onSubmit={handleSubmit} role="search">
+        <div>
+          <BiShoppingBag className="icon" />
+          <Input
+            type="text"
+            placeholder="Title, companies, expertise or benefits"
+            value={inputValue}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setInputValue(event.target.value)
+            }
+          />
+        </div>
+        <Button type="submit">Search</Button>
+      </form>
+    </Wrapper>
+  );
+};
+
+export { SearchBar };

@@ -1,7 +1,13 @@
 import React from 'react';
+import { SearchBar } from 'components/SearchBar/SearchBar';
 
 function MainPage() {
-  return <div>Our Main Page</div>;
+  return (
+    <>
+      <SearchBar />
+      <div>Our Main Page</div>;
+    </>
+  );
 }
 
 export { MainPage };

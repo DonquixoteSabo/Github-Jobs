@@ -7,6 +7,7 @@ declare module 'styled-components' {
     colors: {
       blue: string;
       steelGray: string;
+      heather: string;
     };
     fontSize: {
       xs: string;
@@ -14,6 +15,12 @@ declare module 'styled-components' {
       m: string;
       l: string;
       xl: string;
+      xl: string;
+    };
+    breakpoints: {
+      sm: string;
+      m: string;
+      l: string;
       xl: string;
     };
   }

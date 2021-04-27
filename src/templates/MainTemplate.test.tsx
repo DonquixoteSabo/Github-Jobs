@@ -11,7 +11,7 @@ describe('MainTemplate', () => {
         <h1>foo</h1>
       </MainTemplate>
     );
-    expect(screen.getByText('Github jobs')).toBeInTheDocument();
+    expect(screen.getByText('Github')).toBeInTheDocument();
     expect(screen.getByText('foo')).toBeInTheDocument();
   });
 });
