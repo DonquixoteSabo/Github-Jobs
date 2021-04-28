@@ -14,13 +14,18 @@ export const CardWrapper = styled.div`
   grid-template-rows: auto 1fr;
   grid-gap: 15px;
   padding: 12px;
+  cursor: pointer;
 `;
 export const CardLogo = styled.img`
   width: 100%;
   height: auto;
+  border-radius: 4px;
 `;
 export const CardBody = styled.div`
   color: ${({ theme }) => theme.colors.chambray};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .company {
     font-weight: 600;
     font-size: ${({ theme }) => theme.fontSize.s};
