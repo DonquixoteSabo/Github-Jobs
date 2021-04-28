@@ -22,7 +22,11 @@ function JobCard({
 }: Props) {
   return (
     <CardWrapper>
-      <CardLogo src={companyLogo} />
+      {companyLogo ? (
+        <CardLogo src={companyLogo} alt={`${company} logo`} />
+      ) : (
+        <img src="https://i.imgur.com/Poiq6cC.png" alt="not found" />
+      )}
       <CardBody>
         <h3 className="company">{company}</h3>
         <h1 className="title">{title}</h1>
