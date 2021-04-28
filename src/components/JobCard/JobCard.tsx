@@ -28,7 +28,7 @@ function JobCard({
       {companyLogo ? (
         <CardLogo src={companyLogo} alt={`${company} logo`} />
       ) : (
-        <img src="https://i.imgur.com/Poiq6cC.png" alt="not found" />
+        <CardLogo src="https://i.imgur.com/Poiq6cC.png" alt="not found" />
       )}
       <CardBody>
         <h3 className="company">{company}</h3>
