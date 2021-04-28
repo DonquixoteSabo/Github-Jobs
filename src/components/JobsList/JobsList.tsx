@@ -11,7 +11,7 @@ function JobsList() {
       <div>Our list</div>
       <ul>
         {jobs.length > 0 ? (
-          jobs.map((job) => <JobCard {...job} />)
+          jobs.map((job) => <JobCard key={job.id} {...job} />)
         ) : (
           <h1>Loading...</h1>
         )}
