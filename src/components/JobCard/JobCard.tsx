@@ -4,6 +4,7 @@ import { BiWorld } from 'react-icons/bi';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 //styles
 import { CardWrapper, CardLogo, CardBody, CardInfo } from './JobCard.styles';
+
 interface Props {
   type: string;
   title: string;
@@ -12,6 +13,8 @@ interface Props {
   createdAt: string;
   location: string;
 }
+const dateFormat = require('dateformat');
+
 function JobCard({
   type,
   title,
@@ -41,7 +44,7 @@ function JobCard({
         </div>
         <div>
           <AiOutlineClockCircle />
-          <p className="time">{createdAt}</p>
+          <p className="time">{dateFormat(createdAt, 'd mmmm')}</p>
         </div>
       </CardInfo>
     </CardWrapper>
