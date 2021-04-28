@@ -6,7 +6,7 @@ function JobsList() {
   return (
     <>
       <div>Our list</div>
-      <JobCard />
+      {/* <JobCard /> */}
     </>
   );
 }

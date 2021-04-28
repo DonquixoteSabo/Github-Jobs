@@ -1,27 +1,43 @@
 import React from 'react';
+//icons
 import { BiWorld } from 'react-icons/bi';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 //styles
 import { CardWrapper, CardLogo, CardBody, CardInfo } from './JobCard.styles';
-function JobCard() {
+interface Props {
+  type: string;
+  title: string;
+  company: string;
+  companyLogo?: string;
+  createdAt: string;
+  location: string;
+}
+function JobCard({
+  type,
+  title,
+  company,
+  companyLogo,
+  createdAt,
+  location,
+}: Props) {
   return (
     <CardWrapper>
-      <CardLogo src="https://picsum.photos/200" />
+      <CardLogo src={companyLogo} />
       <CardBody>
-        <h3 className="company">Kasisto</h3>
-        <h1 className="title">Front-End Software Engineer</h1>
+        <h3 className="company">{company}</h3>
+        <h1 className="title">{title}</h1>
         <div className="type">
-          <p className="company">Full time</p>
+          <p className="company">{type}</p>
         </div>
       </CardBody>
       <CardInfo>
         <div>
           <BiWorld />
-          <p className="city">New York</p>
+          <p className="city">{location}</p>
         </div>
         <div>
           <AiOutlineClockCircle />
-          <p className="time">5 days ago</p>
+          <p className="time">{createdAt}</p>
         </div>
       </CardInfo>
     </CardWrapper>
