@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //components
 import { JobCard } from 'components/JobCard/JobCard';
 //hooks
-import { useAppSelector } from 'hooks/reduxHook';
+import { useAppDispatch, useAppSelector } from 'hooks/reduxHook';
+import { fetchAllJobs } from 'API/fetchAllJobs';
 
 function JobsList() {
   const { jobs } = useAppSelector((state) => state.jobs);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    (async () => {
+      const resultAction = await dispatch(fetchAllJobs());
+      console.log(resultAction);
+    })();
+  }, [dispatch]);
   return (
     <>
       <div>Our list</div>
