@@ -49,5 +49,7 @@ table {
 html, body, input, button, a {
     font-family: 'Poppins', sans-serif;
 }
-
+body {
+  background-color: #F6F7FB;;
+}
 `;
