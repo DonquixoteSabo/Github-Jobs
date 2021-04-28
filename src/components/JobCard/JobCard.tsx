@@ -15,6 +15,9 @@ export const CardWrapper = styled.div`
   grid-gap: 15px;
   padding: 12px;
   cursor: pointer;
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+    grid-template-columns: 90px 1fr auto;
+  }
 `;
 export const CardLogo = styled.img`
   width: 100%;
@@ -29,10 +32,16 @@ export const CardBody = styled.div`
   .company {
     font-weight: 600;
     font-size: ${({ theme }) => theme.fontSize.s};
+    @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+      font-size: ${({ theme }) => theme.fontSize.m};
+    }
   }
   .title {
     font-weight: 400;
     font-size: ${({ theme }) => theme.fontSize.xl};
+    @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+      font-size: ${({ theme }) => theme.fontSize.xxl};
+    }
   }
   .type {
     width: 75px;
@@ -42,6 +51,10 @@ export const CardBody = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+      width: 85px;
+      height: 30px;
+    }
   }
 `;
 export const CardInfo = styled.div`
@@ -53,6 +66,17 @@ export const CardInfo = styled.div`
   justify-content: space-between;
   div {
     display: flex;
+    p {
+      margin-left: 10px;
+    }
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+    grid-column: 3/4;
+    margin-top: auto;
+    font-size: ${({ theme }) => theme.fontSize.m};
+    div {
+      margin-left: 30px;
+    }
   }
 `;
 function JobCard() {
