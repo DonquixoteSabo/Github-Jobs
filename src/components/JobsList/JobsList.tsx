@@ -10,8 +10,7 @@ function JobsList() {
   const dispatch = useAppDispatch();
   useEffect(() => {
     (async () => {
-      const resultAction = await dispatch(fetchAllJobs());
-      console.log(resultAction);
+      await dispatch(fetchAllJobs());
     })();
   }, [dispatch]);
   return (

@@ -4,10 +4,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 //styled-components setup
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
+//redux
+import { store } from 'redux/store';
+import { Provider } from 'react-redux';
 
 export const renderWithProviders = (children: ReactNode | ReactNode[]) =>
   render(
     <ThemeProvider theme={theme}>
-      <Router>{children}</Router>
+      <Provider store={store}>
+        <Router>{children}</Router>
+      </Provider>
     </ThemeProvider>
   );
