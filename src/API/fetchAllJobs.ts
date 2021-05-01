@@ -14,9 +14,10 @@ interface Api_data {
 }
 
 export const fetchAllJobs = createAsyncThunk('jobs/fetchAllJobs', async () => {
-  const response = await axios(
+  const response = await axios.get(
     `${ALL_ORIGIN}https://jobs.github.com/positions.json?description=ruby&page=1`
   );
+
   const data = response.data;
   // Our api uses snake case instead of camel case so we have to change it in this awful way.
   const jobs = data.map((job: Api_data) => ({
