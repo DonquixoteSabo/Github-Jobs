@@ -1,4 +1,7 @@
 import React from 'react';
+//components
+import { FullTime } from 'components/FullTime/FullTime';
+import { LocationFilter } from 'components/LocationFilter/LocationFilter';
 
 import styled from 'styled-components';
 
@@ -13,7 +16,8 @@ export const Wrapper = styled.section`
 function Filters() {
   return (
     <Wrapper>
-      <h1>siemaa</h1>
+      <FullTime />
+      <LocationFilter />
     </Wrapper>
   );
 }
