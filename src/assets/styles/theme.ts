@@ -13,8 +13,8 @@ const theme: DefaultTheme = {
     s: '14px',
     m: '16px',
     l: '18px',
-    xl: '22px',
-    xxl: '24px',
+    xl: '20px',
+    xxl: '22px',
   },
   breakpoints: {
     sm: '576px',

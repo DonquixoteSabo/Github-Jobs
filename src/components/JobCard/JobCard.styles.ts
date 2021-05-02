@@ -5,19 +5,21 @@ export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 90px auto 1fr;
   grid-template-rows: auto 1fr;
+  align-items: center;
   grid-gap: 15px;
   border-radius: 4px;
   background-color: white;
   padding: 12px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  margin: 25px 0;
   @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
     grid-template-columns: 90px 1fr auto;
   }
 `;
 export const CardLogo = styled.img`
   width: 100%;
-  height: auto;
+  grid-row: 1/-1;
   border-radius: 4px;
 `;
 export const CardBody = styled.div`
@@ -25,6 +27,7 @@ export const CardBody = styled.div`
   flex-direction: column;
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.chambray};
+
   .company {
     font-weight: 600;
     font-size: ${({ theme }) => theme.fontSize.s};
