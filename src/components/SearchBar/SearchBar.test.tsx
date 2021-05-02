@@ -1,4 +1,5 @@
 import { screen, fireEvent } from '@testing-library/react';
+import { JobsList } from 'components/JobsList/JobsList';
 //helpers
 import { renderWithProviders } from 'helpers/renderWithProviders';
 //components
@@ -22,5 +23,15 @@ describe('SearchBar', () => {
     fireEvent.submit(form);
 
     expect(input.value).toBe('');
+  });
+  it('renders all fullTime jobs', async () => {
+    renderWithProviders(
+      <>
+        <SearchBar />
+        <JobsList />
+      </>
+    );
+    const elements = await screen.findAllByText('Full Time');
+    expect(elements.length).toBe(4);
   });
 });
