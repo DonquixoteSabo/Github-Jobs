@@ -4,15 +4,9 @@ import { BiWorld } from 'react-icons/bi';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 //styles
 import { CardWrapper, CardLogo, CardBody, CardInfo } from './JobCard.styles';
+//types
+import { Job } from 'types/Job';
 
-interface Props {
-  type: string;
-  title: string;
-  company: string;
-  companyLogo?: string;
-  createdAt: string;
-  location: string;
-}
 const dateFormat = require('dateformat');
 
 function JobCard({
@@ -22,7 +16,7 @@ function JobCard({
   companyLogo,
   createdAt,
   location,
-}: Props) {
+}: Job) {
   return (
     <CardWrapper>
       {companyLogo ? (
