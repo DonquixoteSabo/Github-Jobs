@@ -3,12 +3,17 @@ import React, { useState } from 'react';
 import { Wrapper, Input, Button } from './SearchBar.styles';
 //icons
 import { BiShoppingBag } from 'react-icons/bi';
+//redux-setup
+import { useAppDispatch } from 'hooks/reduxHook';
+import { filterJobs } from 'redux/actions';
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState('');
+  const dispatch = useAppDispatch();
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // console.log(inputValue);
+    dispatch(filterJobs(inputValue));
     setInputValue('');
   };
   return (
