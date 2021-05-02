@@ -8,5 +8,9 @@ describe('JobsList', () => {
   it('renders JobsList with properly connected redux', async () => {
     renderWithProviders(<JobsList />);
     expect(await screen.findByText('Bonanza.com, Inc.')).toBeInTheDocument();
+    expect(
+      await screen.findByText('Vista Higher Learning')
+    ).toBeInTheDocument();
+    expect(await screen.findByText('lawpilots GmbH')).toBeInTheDocument();
   });
 });
