@@ -6,13 +6,15 @@ const theme: DefaultTheme = {
     blue: '#1E86FF',
     steelGray: '#282538',
     heather: '#B9BDCF',
+    chambray: '#334680',
   },
   fontSize: {
     xs: '12px',
     s: '14px',
     m: '16px',
     l: '18px',
-    xl: '24px',
+    xl: '22px',
+    xxl: '24px',
   },
   breakpoints: {
     sm: '576px',

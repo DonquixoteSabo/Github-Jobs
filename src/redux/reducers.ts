@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+//thunks
+import { fetchAllJobs } from 'API/fetchAllJobs';
 //types
 import { Job } from 'types/Job';
-//I will change that later;
+
 interface State {
   jobs: Job[];
   filteredJobs: Job[];
@@ -17,7 +19,13 @@ const jobSlice = createSlice({
       //yo
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(fetchAllJobs.fulfilled, (state, action) => {
+      state.jobs = action.payload;
+    });
+  },
 });
 
 export const { filterJobs } = jobSlice.actions;
+export { fetchAllJobs };
 export default jobSlice.reducer;
