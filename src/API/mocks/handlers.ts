@@ -1,31 +1,25 @@
+import { ALL_ORIGIN } from 'API/allOrigin';
 import { rest } from 'msw';
+import { Api_data } from 'types/ApiData';
 //types
 import { Job } from 'types/Job';
 
 export const handlers = [
   rest.get('/jobs', async (req, res, ctx) => {
-    const jobs: Job[] = [
-      {
-        id: '7e95bae3-1a81-40e8-b254-c73db01770ae',
-        type: 'Full Time',
-        createdAt: 'Fri Apr 30 19:14:11 UTC 2021',
-        company: 'Bonanza.com, Inc.',
-        location: 'Seattle, WA',
-        title: 'Senior Rails Developer',
-        companyLogo:
-          'https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbXlpIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8c12840bb800d886f0ce1a0213ea27b68e17cf61/bonz_green_square.png',
-      },
-      {
-        id: '8c35f2eb-7f9b-4c3d-8b9b-afbd3bb73fd4',
-        type: 'Full Time',
-        createdAt: 'Tue Apr 27 21:48:01 UTC 2021',
-        company: 'Vista Higher Learning',
-        location: 'Boston, MA, USA',
-        title: 'Senior Software Engineer',
-        companyLogo:
-          'https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaDZpIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fe7f469e66f2c1e1811cbf7ab809c29c18998d89/Corporate%20Logo.png',
-      },
-    ];
+    const response: Response = await ctx.fetch(
+      `${ALL_ORIGIN}https://jobs.github.com/positions.json?description=ruby&page=1`
+    );
+    const data: Api_data[] = await response.json();
+    // Our api uses snake case instead of camel case so we have to change it in this awful way.
+    const jobs: Job[] = data.map((job) => ({
+      company: job.company,
+      companyLogo: job.company_logo,
+      createdAt: job.created_at,
+      id: job.id,
+      location: job.location,
+      title: job.title,
+      type: job.type,
+    }));
     return res(ctx.json(jobs));
   }),
 ];

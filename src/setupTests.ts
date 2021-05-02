@@ -5,9 +5,9 @@
 import '@testing-library/jest-dom';
 import { setupServer } from 'msw/node';
 
-import { handlers } from 'API/mocks/handlers';
+import { mockedDataHandlers } from 'API/mocks/mockedDataHandlers';
 
-const server = setupServer(...handlers);
+const server = setupServer(...mockedDataHandlers);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
