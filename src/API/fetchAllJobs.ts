@@ -2,16 +2,8 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 //constants
 import { ALL_ORIGIN } from './allOrigin';
-
-interface Api_data {
-  company: string;
-  company_logo: string;
-  created_at: string;
-  id: string;
-  location: string;
-  title: string;
-  type: string;
-}
+//types
+import { Api_data } from 'types/ApiData';
 
 export const fetchAllJobs = createAsyncThunk('jobs/fetchAllJobs', async () => {
   const response = await axios.get(
@@ -30,4 +22,7 @@ export const fetchAllJobs = createAsyncThunk('jobs/fetchAllJobs', async () => {
     type: job.type,
   }));
   return jobs;
+  // const response = await axios.get('/jobs');
+  // const data = await response.data;
+  // return data;
 });
