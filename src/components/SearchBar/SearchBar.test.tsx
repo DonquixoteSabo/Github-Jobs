@@ -8,15 +8,13 @@ import { SearchBar } from './SearchBar';
 describe('SearchBar', () => {
   it('renders given content', () => {
     renderWithProviders(<SearchBar />);
-    expect(
-      screen.getByPlaceholderText('Title, companies, expertise or benefits')
-    ).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Title, companies')).toBeInTheDocument();
     expect(screen.getByText('Search')).toBeInTheDocument();
   });
   it('clears input after submitting a form', () => {
     renderWithProviders(<SearchBar />);
     const input = screen.getByPlaceholderText(
-      'Title, companies, expertise or benefits'
+      'Title, companies'
     )! as HTMLInputElement;
     const form = screen.getByRole('search')! as HTMLFormElement;
     fireEvent.change(input, { target: { value: 'Hello' } });
@@ -42,7 +40,7 @@ describe('SearchBar', () => {
       </>
     );
     const input = screen.getByPlaceholderText(
-      'Title, companies, expertise or benefits'
+      'Title, companies'
     )! as HTMLInputElement;
     const form = screen.getByRole('search')! as HTMLFormElement;
 
@@ -65,7 +63,7 @@ describe('SearchBar', () => {
       </>
     );
     const input = screen.getByPlaceholderText(
-      'Title, companies, expertise or benefits'
+      'Title, companies'
     )! as HTMLInputElement;
     const form = screen.getByRole('search')! as HTMLFormElement;
 

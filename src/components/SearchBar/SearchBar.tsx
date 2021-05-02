@@ -23,7 +23,7 @@ const SearchBar = () => {
           <BiShoppingBag className="icon" />
           <Input
             type="text"
-            placeholder="Title, companies, expertise or benefits"
+            placeholder="Title, companies"
             value={inputValue}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
               setInputValue(event.target.value)
