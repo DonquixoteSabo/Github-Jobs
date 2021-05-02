@@ -6,7 +6,7 @@ import { renderWithProviders } from 'helpers/renderWithProviders';
 import { SearchBar } from './SearchBar';
 
 describe('SearchBar', () => {
-  it('renders SearchBar', () => {
+  it('renders given content', () => {
     renderWithProviders(<SearchBar />);
     expect(
       screen.getByPlaceholderText('Title, companies, expertise or benefits')
@@ -24,7 +24,7 @@ describe('SearchBar', () => {
 
     expect(input.value).toBe('');
   });
-  it('renders all fullTime jobs', async () => {
+  it('renders all full time jobs', async () => {
     renderWithProviders(
       <>
         <SearchBar />
@@ -56,5 +56,24 @@ describe('SearchBar', () => {
     expect(
       screen.queryByRole('heading', { name: /react native engineer/i })
     ).toBeNull();
+  });
+  it("doesn't care about letter case", () => {
+    renderWithProviders(
+      <>
+        <SearchBar />
+        <JobsList />
+      </>
+    );
+    const input = screen.getByPlaceholderText(
+      'Title, companies, expertise or benefits'
+    )! as HTMLInputElement;
+    const form = screen.getByRole('search')! as HTMLFormElement;
+
+    fireEvent.change(input, { target: { value: 'VISTA' } });
+    fireEvent.submit(form);
+
+    expect(
+      screen.queryByRole('heading', { name: /vista/i })
+    ).toBeInTheDocument();
   });
 });
