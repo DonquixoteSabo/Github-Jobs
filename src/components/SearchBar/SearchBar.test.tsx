@@ -34,4 +34,27 @@ describe('SearchBar', () => {
     const elements = await screen.findAllByText('Full Time');
     expect(elements.length).toBe(4);
   });
+  it('filters jobs', async () => {
+    renderWithProviders(
+      <>
+        <SearchBar />
+        <JobsList />
+      </>
+    );
+    const input = screen.getByPlaceholderText(
+      'Title, companies, expertise or benefits'
+    )! as HTMLInputElement;
+    const form = screen.getByRole('search')! as HTMLFormElement;
+
+    expect(
+      screen.queryByRole('heading', { name: /react native engineer/i })
+    ).toBeInTheDocument();
+
+    fireEvent.change(input, { target: { value: 'Vista' } });
+    fireEvent.submit(form);
+
+    expect(
+      screen.queryByRole('heading', { name: /react native engineer/i })
+    ).toBeNull();
+  });
 });
