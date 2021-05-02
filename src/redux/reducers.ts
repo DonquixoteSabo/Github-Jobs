@@ -22,6 +22,7 @@ const jobSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchAllJobs.fulfilled, (state, action) => {
       state.jobs = action.payload;
+      state.filteredJobs = action.payload;
     });
   },
 });

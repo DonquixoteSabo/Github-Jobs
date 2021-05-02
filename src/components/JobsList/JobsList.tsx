@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/reduxHook';
 import { fetchAllJobs } from 'API/fetchAllJobs';
 
 function JobsList() {
-  const { jobs } = useAppSelector((state) => state.jobs);
+  const { filteredJobs: jobs } = useAppSelector((state) => state.jobs);
   const dispatch = useAppDispatch();
   useEffect(() => {
     (async () => {
