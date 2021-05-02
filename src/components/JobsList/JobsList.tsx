@@ -4,6 +4,8 @@ import { JobCard } from 'components/JobCard/JobCard';
 //hooks
 import { useAppDispatch, useAppSelector } from 'hooks/reduxHook';
 import { fetchAllJobs } from 'API/fetchAllJobs';
+//styles
+import { Wrapper } from './JobList.styles';
 
 function JobsList() {
   const { filteredJobs: jobs } = useAppSelector((state) => state.jobs);
@@ -14,8 +16,7 @@ function JobsList() {
     })();
   }, [dispatch]);
   return (
-    <>
-      <div>Our list</div>
+    <Wrapper>
       <ul>
         {jobs.length > 0 ? (
           jobs.map((job) => <JobCard key={job.id} {...job} />)
@@ -23,7 +24,7 @@ function JobsList() {
           <h1>Loading...</h1>
         )}
       </ul>
-    </>
+    </Wrapper>
   );
 }
 

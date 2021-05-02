@@ -10,6 +10,8 @@ export const Wrapper = styled.section`
   background-image: url(${backgroundImg});
   background-size: cover;
   border-radius: 8px;
+  grid-column: 1/-1;
+
   form {
     width: 90%;
     display: flex;
