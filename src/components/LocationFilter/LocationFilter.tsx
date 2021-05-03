@@ -7,17 +7,20 @@ import { BiWorld } from 'react-icons/bi';
 import { useState } from 'react';
 
 const LocationFilter = () => {
-  const [activeCities, setActiveCities] = useState({
-    london: false,
-    amsterdam: false,
-    newYork: false,
-    berlin: false,
-  });
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setActiveCities({
-      ...activeCities,
-      [e.currentTarget.id]: e.target.checked,
+  const [activeCities, setActiveCities] = useState([
+    { name: 'London', value: 'london', isChecked: true },
+    { name: 'Amsterdam', value: 'amsterdam', isChecked: false },
+    { name: 'New York', value: 'newYork', isChecked: false },
+    { name: 'Berlin', value: 'berlin', isChecked: false },
+  ]);
+  const handleChange = (value: string, isChecked: boolean) => {
+    const newCities = activeCities.map((city) => {
+      if (city.value === value) {
+        return { ...city, isChecked };
+      }
+      return city;
     });
+    setActiveCities(newCities);
   };
 
   return (
@@ -28,46 +31,18 @@ const LocationFilter = () => {
           <BiWorld className="icon" />
           <Input />
         </div>
-        <span>
-          <input
-            type="radio"
-            name="city"
-            id="london"
-            checked={activeCities.london}
-            onChange={handleChange}
-          />
-          <label htmlFor="london">London</label>
-        </span>
-        <span>
-          <input
-            type="radio"
-            name="city"
-            id="amsterdam"
-            checked={activeCities.amsterdam}
-            onChange={handleChange}
-          />
-          <label htmlFor="amsterdam">Amsterdam</label>
-        </span>
-        <span>
-          <input
-            type="radio"
-            name="city"
-            id="newYork"
-            checked={activeCities.newYork}
-            onChange={handleChange}
-          />
-          <label htmlFor="newYork">New York</label>
-        </span>
-        <span>
-          <input
-            type="radio"
-            name="city"
-            id="berlin"
-            checked={activeCities.berlin}
-            onChange={handleChange}
-          />
-          <label htmlFor="berlin">Berlin</label>
-        </span>
+        {activeCities.map((city) => (
+          <span key={city.value}>
+            <input
+              type="radio"
+              name="city"
+              id={city.value}
+              checked={city.isChecked}
+              onChange={() => handleChange(city.value, !city.isChecked)}
+            />
+            <label htmlFor={city.value}>{city.name}</label>
+          </span>
+        ))}
       </Form>
     </>
   );
