@@ -14,7 +14,6 @@ const LocationFilter = () => {
     berlin: false,
   });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.name);
     setActiveCities({
       ...activeCities,
       [e.currentTarget.id]: e.target.checked,
