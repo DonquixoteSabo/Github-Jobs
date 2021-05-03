@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 //styles
-import { Wrapper, Input, Button } from './SearchBar.styles';
+import { Wrapper, Button } from './SearchBar.styles';
+import { Input } from 'components/Input';
 //icons
 import { BiShoppingBag } from 'react-icons/bi';
 //redux-setup
