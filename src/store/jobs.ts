@@ -5,12 +5,17 @@ export const jobsApi = createApi({
   reducerPath: 'jobsApi',
   baseQuery: fetchBaseQuery({ baseUrl: '/jobs/' }),
   endpoints: (builder) => ({
-    getAllJobs: builder.query<Job[], string>({
-      query: () => 'all',
+    getJobs: builder.query<Job[], string>({
+      query: (search) => {
+        if (search.length === 0) {
+          return 'a';
+        }
+        return search;
+      },
     }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAllJobsQuery } = jobsApi;
+export const { useGetJobsQuery } = jobsApi;

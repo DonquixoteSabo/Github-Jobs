@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 //components
 import { JobCard } from 'components/JobCard/JobCard';
 //hooks
-import { useGetAllJobsQuery } from '../../store/jobs';
+import { useGetJobsQuery } from '../../store/jobs';
 //styles
 import { Wrapper } from './JobList.styles';
 
-function JobsList() {
-  // @ts-ignore
-  const { data, isLoading, isError, error } = useGetAllJobsQuery();
-  console.log(data);
+interface Props {
+  search: string;
+}
+
+function JobsList({ search }: Props) {
+  const { data, isLoading, isError, error } = useGetJobsQuery(search);
 
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) {

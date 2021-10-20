@@ -6,13 +6,16 @@ import { Input } from 'components/Input';
 import { BiShoppingBag } from 'react-icons/bi';
 //redux-setup
 
-const SearchBar = () => {
+interface Props {
+  dispatchJobs: any;
+}
+
+const SearchBar = ({ dispatchJobs }: Props) => {
   const [inputValue, setInputValue] = useState('');
-  // const dispatch = useAppDispatch();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // dispatch(filterJobs(inputValue));
+    dispatchJobs(inputValue);
     setInputValue('');
   };
   return (

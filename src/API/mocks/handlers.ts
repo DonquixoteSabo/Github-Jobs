@@ -1,12 +1,15 @@
-import { ALL_ORIGIN } from 'API/allOrigin';
 import { rest } from 'msw';
-import { Api_data } from 'types/ApiData';
-//types
-import { Job } from 'types/Job';
+//data
 import { jobs } from './mockedJobs';
 
 export const handlers = [
-  rest.get('/jobs/all', async (req, res, ctx) => {
-    return res(ctx.json(jobs));
+  // Due to changes in github API I decide to mock jobs response
+  rest.get('/jobs/:searchValue', async (req, res, ctx) => {
+    const { searchValue } = req.params;
+    const filteredJobs = jobs.filter((job) =>
+      job.title.toLowerCase().includes(searchValue)
+    );
+    console.log(searchValue);
+    return res(ctx.json(filteredJobs));
   }),
 ];
