@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 //redux
-import { store } from 'redux/store';
+import { store } from 'store';
 import { Provider } from 'react-redux';
 
 export const renderWithProviders = (children: ReactNode | ReactNode[]) =>
