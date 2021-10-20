@@ -70,7 +70,7 @@ export const jobs: Job[] = [
     createdAt: '05.01.2021',
     company: 'Gigabox',
     location: 'Bailuquan',
-    companyLogo: 'https://picsum.photos/200?random=8',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Account Executive',
   },
   {
@@ -79,7 +79,7 @@ export const jobs: Job[] = [
     createdAt: '12.03.2021',
     company: 'Yadel',
     location: 'Khān Shaykhūn',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Health Coach I',
   },
   {
@@ -88,7 +88,7 @@ export const jobs: Job[] = [
     createdAt: '21.06.2021',
     company: 'Ozu',
     location: 'Pubal',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Structural Analysis Engineer',
   },
   {
@@ -97,7 +97,7 @@ export const jobs: Job[] = [
     createdAt: '22.11.2020',
     company: 'Tagfeed',
     location: 'Talldaww',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Operator',
   },
   {
@@ -106,7 +106,7 @@ export const jobs: Job[] = [
     createdAt: '20.03.2021',
     company: 'Zoomdog',
     location: 'Caldas da Felgueira',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Senior Editor',
   },
   {
@@ -115,7 +115,7 @@ export const jobs: Job[] = [
     createdAt: '11.01.2021',
     company: 'Fivespan',
     location: 'Kthella e Epërme',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'GIS Technical Architect',
   },
   {
@@ -124,7 +124,7 @@ export const jobs: Job[] = [
     createdAt: '31.07.2021',
     company: 'Wikibox',
     location: 'Apartadó',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Assistant Professor',
   },
   {
@@ -133,7 +133,7 @@ export const jobs: Job[] = [
     createdAt: '25.08.2021',
     company: 'Brightbean',
     location: 'Al Mijlad',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Graphic Designer',
   },
   {
@@ -142,7 +142,7 @@ export const jobs: Job[] = [
     createdAt: '30.06.2021',
     company: 'Gabtype',
     location: 'Blizne',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Safety Technician IV',
   },
   {
@@ -151,7 +151,7 @@ export const jobs: Job[] = [
     createdAt: '20.02.2021',
     company: 'Blogtags',
     location: 'San Francisco',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Paralegal',
   },
   {
@@ -160,7 +160,7 @@ export const jobs: Job[] = [
     createdAt: '08.10.2020',
     company: 'Jabbertype',
     location: 'Ganjiangtou',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Media Manager II',
   },
   {
@@ -169,7 +169,7 @@ export const jobs: Job[] = [
     createdAt: '21.06.2021',
     company: 'Devbug',
     location: 'Araruama',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Financial Advisor',
   },
   {
@@ -178,7 +178,7 @@ export const jobs: Job[] = [
     createdAt: '23.02.2021',
     company: 'Edgepulse',
     location: 'Rueil-Malmaison',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Payment Adjustment Coordinator',
   },
   {
@@ -187,7 +187,7 @@ export const jobs: Job[] = [
     createdAt: '10.12.2020',
     company: 'Dynabox',
     location: 'El Progreso',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Health Coach I',
   },
   {
@@ -196,7 +196,7 @@ export const jobs: Job[] = [
     createdAt: '27.08.2021',
     company: 'Fivespan',
     location: 'Biaokou',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Occupational Therapist',
   },
   {
@@ -205,7 +205,7 @@ export const jobs: Job[] = [
     createdAt: '10.01.2021',
     company: 'Ntags',
     location: 'Bayuwan',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Registered Nurse',
   },
   {
@@ -214,7 +214,7 @@ export const jobs: Job[] = [
     createdAt: '28.12.2020',
     company: 'Dynazzy',
     location: 'Dado',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Account Coordinator',
   },
   {
@@ -223,7 +223,7 @@ export const jobs: Job[] = [
     createdAt: '28.10.2020',
     company: 'Shuffledrive',
     location: 'Buenavista',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Programmer IV',
   },
   {
@@ -232,7 +232,7 @@ export const jobs: Job[] = [
     createdAt: '08.12.2020',
     company: 'Blogtags',
     location: 'Herrera',
-    companyLogo: 'https://picsum.photos/200?random=1',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Nurse',
   },
   {
@@ -241,7 +241,7 @@ export const jobs: Job[] = [
     createdAt: '16.10.2020',
     company: 'Youspan',
     location: 'Kokoshkino',
-    companyLogo: 'http://dummyimage.com/139x100.png/dddddd/000000',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Marketing Manager',
   },
   {
@@ -250,7 +250,7 @@ export const jobs: Job[] = [
     createdAt: '31.03.2021',
     company: 'Kwideo',
     location: 'Zheng’an',
-    companyLogo: 'http://dummyimage.com/215x100.png/dddddd/000000',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Compensation Analyst',
   },
   {
@@ -259,7 +259,7 @@ export const jobs: Job[] = [
     createdAt: '01.10.2021',
     company: 'Wikizz',
     location: 'Kafr Kannā',
-    companyLogo: 'http://dummyimage.com/166x100.png/dddddd/000000',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Environmental Tech',
   },
   {
@@ -268,7 +268,7 @@ export const jobs: Job[] = [
     createdAt: '31.03.2021',
     company: 'Rooxo',
     location: 'Hanyuan',
-    companyLogo: 'http://dummyimage.com/191x100.png/5fa2dd/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Database Administrator III',
   },
   {
@@ -277,7 +277,7 @@ export const jobs: Job[] = [
     createdAt: '11.09.2021',
     company: 'Meezzy',
     location: 'Lesnikovo',
-    companyLogo: 'http://dummyimage.com/224x100.png/dddddd/000000',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Assistant Manager',
   },
   {
@@ -286,7 +286,7 @@ export const jobs: Job[] = [
     createdAt: '02.02.2021',
     company: 'Dynava',
     location: 'Santiago',
-    companyLogo: 'http://dummyimage.com/131x100.png/cc0000/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Software Consultant',
   },
   {
@@ -295,7 +295,7 @@ export const jobs: Job[] = [
     createdAt: '02.10.2021',
     company: 'Dabvine',
     location: 'Khatsyezhyna',
-    companyLogo: 'http://dummyimage.com/124x100.png/ff4444/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Nurse Practicioner',
   },
   {
@@ -304,7 +304,7 @@ export const jobs: Job[] = [
     createdAt: '11.10.2020',
     company: 'Livefish',
     location: 'Krajan Curahcotok',
-    companyLogo: 'http://dummyimage.com/103x100.png/cc0000/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Quality Engineer',
   },
   {
@@ -313,7 +313,7 @@ export const jobs: Job[] = [
     createdAt: '12.08.2021',
     company: 'Eabox',
     location: 'Pondokkaha Kelod',
-    companyLogo: 'http://dummyimage.com/198x100.png/dddddd/000000',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Structural Analysis Engineer',
   },
   {
@@ -322,7 +322,7 @@ export const jobs: Job[] = [
     createdAt: '08.06.2021',
     company: 'Centimia',
     location: 'Pasirhuni',
-    companyLogo: 'http://dummyimage.com/127x100.png/5fa2dd/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'GIS Technical Architect',
   },
   {
@@ -331,7 +331,7 @@ export const jobs: Job[] = [
     createdAt: '24.04.2021',
     company: 'Gigaclub',
     location: 'Queluz',
-    companyLogo: 'http://dummyimage.com/104x100.png/5fa2dd/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Speech Pathologist',
   },
   {
@@ -340,7 +340,7 @@ export const jobs: Job[] = [
     createdAt: '19.10.2021',
     company: 'Edgepulse',
     location: 'Laventure',
-    companyLogo: 'http://dummyimage.com/198x100.png/5fa2dd/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Analog Circuit Design manager',
   },
   {
@@ -349,7 +349,7 @@ export const jobs: Job[] = [
     createdAt: '15.10.2020',
     company: 'Oyoba',
     location: 'Lumbatan',
-    companyLogo: 'http://dummyimage.com/134x100.png/ff4444/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Professor',
   },
   {
@@ -358,7 +358,7 @@ export const jobs: Job[] = [
     createdAt: '29.01.2021',
     company: 'Kamba',
     location: 'Pyu',
-    companyLogo: 'http://dummyimage.com/230x100.png/dddddd/000000',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Assistant Professor',
   },
   {
@@ -367,7 +367,7 @@ export const jobs: Job[] = [
     createdAt: '10.04.2021',
     company: 'Vinder',
     location: 'Novyy Starodub',
-    companyLogo: 'http://dummyimage.com/147x100.png/ff4444/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Programmer Analyst I',
   },
   {
@@ -376,7 +376,7 @@ export const jobs: Job[] = [
     createdAt: '25.07.2021',
     company: 'Voolia',
     location: 'Chaplygin',
-    companyLogo: 'http://dummyimage.com/182x100.png/ff4444/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Software Engineer II',
   },
   {
@@ -385,7 +385,7 @@ export const jobs: Job[] = [
     createdAt: '02.10.2021',
     company: 'Youfeed',
     location: 'San Mariano',
-    companyLogo: 'http://dummyimage.com/119x100.png/dddddd/000000',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Engineer II',
   },
   {
@@ -394,7 +394,7 @@ export const jobs: Job[] = [
     createdAt: '14.11.2020',
     company: 'Linklinks',
     location: 'Chigorodó',
-    companyLogo: 'http://dummyimage.com/233x100.png/cc0000/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Pharmacist',
   },
   {
@@ -403,7 +403,7 @@ export const jobs: Job[] = [
     createdAt: '20.07.2021',
     company: 'Yozio',
     location: 'Quảng Ngãi',
-    companyLogo: 'http://dummyimage.com/103x100.png/5fa2dd/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Sales Associate',
   },
   {
@@ -412,7 +412,7 @@ export const jobs: Job[] = [
     createdAt: '27.06.2021',
     company: 'Thoughtstorm',
     location: 'Karangnongko',
-    companyLogo: 'http://dummyimage.com/139x100.png/ff4444/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Assistant Manager',
   },
   {
@@ -421,7 +421,7 @@ export const jobs: Job[] = [
     createdAt: '11.01.2021',
     company: 'Fanoodle',
     location: 'Navoiy',
-    companyLogo: 'http://dummyimage.com/235x100.png/5fa2dd/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Librarian',
   },
   {
@@ -430,7 +430,7 @@ export const jobs: Job[] = [
     createdAt: '06.07.2021',
     company: 'Chatterpoint',
     location: 'Stenungsund',
-    companyLogo: 'http://dummyimage.com/142x100.png/ff4444/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Account Executive',
   },
   {
@@ -439,7 +439,7 @@ export const jobs: Job[] = [
     createdAt: '09.11.2020',
     company: 'Realbridge',
     location: 'Casigua El Cubo',
-    companyLogo: 'http://dummyimage.com/193x100.png/ff4444/ffffff',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Compensation Analyst',
   },
   {
@@ -448,7 +448,7 @@ export const jobs: Job[] = [
     createdAt: '30.08.2021',
     company: 'Linkbridge',
     location: 'Shumikha',
-    companyLogo: 'http://dummyimage.com/176x100.png/dddddd/000000',
+    companyLogo: 'https://picsum.photos/200?random=',
     title: 'Account Executive',
   },
 ];

@@ -16,11 +16,12 @@ function JobCard({
   companyLogo,
   createdAt,
   location,
+  id,
 }: Job) {
   return (
     <CardWrapper>
       {companyLogo ? (
-        <CardLogo src={companyLogo} alt={`${company} logo`} />
+        <CardLogo src={companyLogo + id} alt={`${company} logo`} />
       ) : (
         <CardLogo src="https://i.imgur.com/Poiq6cC.png" alt="not found" />
       )}
@@ -38,7 +39,7 @@ function JobCard({
         </div>
         <div>
           <AiOutlineClockCircle />
-          <p className="time">{dateFormat(createdAt, 'd mmmm')}</p>
+          <p className="time">{createdAt}</p>
         </div>
       </CardInfo>
     </CardWrapper>
