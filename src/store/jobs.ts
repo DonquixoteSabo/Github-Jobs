@@ -6,7 +6,7 @@ export const jobsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: '/jobs/' }),
   endpoints: (builder) => ({
     getJobs: builder.query<Job[], string>({
-      query: (search) => (search.length ? search : 'all'),
+      query: (search) => (search.length ? `?search=${search}` : '/all'),
     }),
   }),
 });

@@ -14,12 +14,13 @@ import { jobs } from './mockedJobs';
 // Due to changes in github API I decide to mock jobs response
 export const handlers = [
   rest.get('/jobs/all', (req, res, ctx) => res(ctx.json(jobs))),
-  rest.get('/jobs/:searchValue', (req, res, ctx) => {
-    const { searchValue } = req.params;
+  rest.get('/jobs', (req, res, ctx) => {
+    const value = req.url.searchParams.get('search');
+    console.log(value);
     const filteredJobs = jobs.filter((job) =>
-      job.title.toLowerCase().includes(searchValue)
+      job.title.toLowerCase().includes(value!)
     );
-    console.log(searchValue);
+
     return res(ctx.json(filteredJobs));
   }),
 ];
