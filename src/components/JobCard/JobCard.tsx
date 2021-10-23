@@ -7,8 +7,6 @@ import { CardWrapper, CardLogo, CardBody, CardInfo } from './JobCard.styles';
 //types
 import { Job } from 'types/Job';
 
-const dateFormat = require('dateformat');
-
 function JobCard({
   type,
   title,

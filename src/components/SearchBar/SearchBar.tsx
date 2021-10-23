@@ -4,18 +4,17 @@ import { Wrapper, Button } from './SearchBar.styles';
 import { Input } from 'components/Input';
 //icons
 import { BiShoppingBag } from 'react-icons/bi';
-//redux-setup
 
 interface Props {
-  dispatchJobs: any;
+  handleSearch: (arg: string) => void;
 }
 
-const SearchBar = ({ dispatchJobs }: Props) => {
+const SearchBar = ({ handleSearch }: Props) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatchJobs(inputValue);
+    handleSearch(inputValue);
     setInputValue('');
   };
   return (

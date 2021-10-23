@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 //components
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { JobsList } from 'components/JobsList/JobsList';
@@ -8,10 +8,12 @@ import { Wrapper } from './MainPage.styles';
 
 function MainPage() {
   const [search, setSearch] = useState('');
-  const dispatchJobs = (job: string) => setSearch(job);
+
+  const handleSearch = (search: string) => setSearch(search);
+
   return (
     <Wrapper>
-      <SearchBar dispatchJobs={dispatchJobs} />
+      <SearchBar handleSearch={handleSearch} />
       <Filters />
       <JobsList search={search} />
     </Wrapper>

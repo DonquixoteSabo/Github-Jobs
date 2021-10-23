@@ -11,7 +11,7 @@ interface Props {
 }
 
 function JobsList({ search }: Props) {
-  const { data, isLoading, isError, error } = useGetJobsQuery(search);
+  const { data, isLoading, isError, error } = useGetJobsQuery(search || '');
 
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) {
