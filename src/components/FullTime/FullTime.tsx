@@ -1,16 +1,17 @@
-const FullTime = () => {
-  const handleChange = () => {
-    console.log('siema');
-  };
+interface Props {
+  dispatchIsFullTime: (v: boolean) => void;
+  isFullTime: boolean;
+}
 
+const FullTime = ({ dispatchIsFullTime, isFullTime }: Props) => {
   return (
     <>
       <input
         type="checkbox"
         name="full-time"
         id="fulltime"
-        checked={true}
-        onChange={handleChange}
+        checked={isFullTime}
+        onChange={(e) => dispatchIsFullTime(e.target.checked)}
       />
       <label htmlFor="fulltime">Full time</label>
     </>

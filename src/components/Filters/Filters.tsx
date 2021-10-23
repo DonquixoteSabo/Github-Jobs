@@ -13,13 +13,18 @@ export const Wrapper = styled.section`
   }
 `;
 
-function Filters() {
+interface Props {
+  dispatchIsFullTime: (v: boolean) => void;
+  isFullTime: boolean;
+}
+
+const Filters = (props: Props) => {
   return (
     <Wrapper>
-      <FullTime />
+      <FullTime {...props} />
       <LocationFilter />
     </Wrapper>
   );
-}
+};
 
 export { Filters };

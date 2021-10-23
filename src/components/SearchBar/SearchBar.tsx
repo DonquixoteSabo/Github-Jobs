@@ -6,15 +6,15 @@ import { Input } from 'components/Input';
 import { BiShoppingBag } from 'react-icons/bi';
 
 interface Props {
-  handleSearch: (arg: string) => void;
+  dispatchSearch: (arg: string) => void;
 }
 
-const SearchBar = ({ handleSearch }: Props) => {
+const SearchBar = ({ dispatchSearch }: Props) => {
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    handleSearch(inputValue);
+    dispatchSearch(inputValue);
     setInputValue('');
   };
   return (
