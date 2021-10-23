@@ -1,12 +1,27 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Job } from 'types/Job';
 
+export interface Filters {
+  search: string;
+  isFullTime: boolean;
+}
+
 export const jobsApi = createApi({
   reducerPath: 'jobsApi',
   baseQuery: fetchBaseQuery({ baseUrl: '/jobs/' }),
   endpoints: (builder) => ({
-    getJobs: builder.query<Job[], string>({
-      query: (search) => (search.length ? `?search=${search}` : '/all'),
+    getJobs: builder.query<Job[], Filters>({
+      query: (filters) => {
+        let link = '';
+        if (filters.search.length) {
+          link += `?search=${filters.search}&`;
+        } else {
+          link += '/all?';
+        }
+        if (filters.isFullTime) link += 'fulltime=true';
+
+        return link;
+      },
     }),
   }),
 });

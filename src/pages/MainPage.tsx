@@ -20,7 +20,7 @@ function MainPage() {
         isFullTime={isFullTime}
         dispatchIsFullTime={dispatchIsFullTime}
       />
-      <JobsList search={search} />
+      <JobsList search={search} isFullTime={isFullTime} />
     </Wrapper>
   );
 }

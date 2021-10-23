@@ -5,21 +5,37 @@ import { jobs } from './mockedJobs';
 // TODO
 // REFACTOR ENDPOINTS
 // instead of /jobs/:searchValue use /jobs?search=?value
-// to show only fulltime jobs use /jobs?fulltime
+// to show only fulltime jobs use /jobs?fulltime=true
 // to filter by city, state or country use /jobs?city=value
 // to use dots under location input use /jobs?location=value
-//ofc at the very end it may look like: /jobs?search=example&fulltime%city=442&location=new-york
+//ofc at the very end it may look like: /jobs?search=example&fulltime=true%city=442&location=new-york
 // TODO
 
 // Due to changes in github API I decide to mock jobs response
 export const handlers = [
-  rest.get('/jobs/all', (req, res, ctx) => res(ctx.json(jobs))),
+  rest.get('/jobs/all', (req, res, ctx) => {
+    const isFullTime = req.url.searchParams.get('fulltime');
+    let filteredJobs;
+    if (isFullTime)
+      filteredJobs = jobs.filter((job) => job.type === 'Full Time');
+    else filteredJobs = jobs;
+
+    return res(ctx.json(filteredJobs));
+  }),
   rest.get('/jobs', (req, res, ctx) => {
     const value = req.url.searchParams.get('search');
-    console.log(value);
-    const filteredJobs = jobs.filter((job) =>
-      job.title.toLowerCase().includes(value!)
-    );
+    const isFullTime = req.url.searchParams.get('fulltime');
+    let filteredJobs;
+    if (isFullTime) {
+      filteredJobs = jobs.filter(
+        (job) =>
+          job.title.toLowerCase().includes(value!) && job.type === 'Full Time'
+      );
+    } else {
+      filteredJobs = jobs.filter((job) =>
+        job.title.toLowerCase().includes(value!)
+      );
+    }
 
     return res(ctx.json(filteredJobs));
   }),
