@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //styles
 import { Input } from 'components/Input';
 import { Form, Title } from './LocationFilter.styles';
@@ -6,7 +6,13 @@ import { Form, Title } from './LocationFilter.styles';
 import { BiWorld } from 'react-icons/bi';
 import { useState } from 'react';
 
-const LocationFilter = () => {
+interface Props {
+  location: string;
+  dispatchLocation: (v: string) => void;
+}
+
+const LocationFilter = ({ location, dispatchLocation }: Props) => {
+  const [inputValue, setInputValue] = useState('');
   const [activeCities, setActiveCities] = useState([
     { name: 'London', value: 'london', isChecked: true },
     { name: 'Amsterdam', value: 'amsterdam', isChecked: false },
@@ -23,13 +29,20 @@ const LocationFilter = () => {
     setActiveCities(newCities);
   };
 
+  useEffect(() => {
+    dispatchLocation(inputValue);
+  }, [inputValue, dispatchLocation]);
+
   return (
     <>
       <Title>Location</Title>
       <Form>
         <div>
           <BiWorld className="icon" />
-          <Input />
+          <Input
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
         </div>
         {activeCities.map((city) => (
           <span key={city.value}>

@@ -23,7 +23,7 @@ export const handlers = [
     return res(ctx.json(filteredJobs));
   }),
   rest.get('/jobs', (req, res, ctx) => {
-    const value = req.url.searchParams.get('search');
+    const value = req.url.searchParams.get('search')?.toLowerCase();
     const isFullTime = req.url.searchParams.get('fulltime');
     let filteredJobs;
     if (isFullTime) {

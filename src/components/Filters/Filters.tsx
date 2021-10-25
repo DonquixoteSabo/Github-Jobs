@@ -14,15 +14,25 @@ export const Wrapper = styled.section`
 `;
 
 interface Props {
-  dispatchIsFullTime: (v: boolean) => void;
   isFullTime: boolean;
+  location: string;
+  dispatchIsFullTime: (v: boolean) => void;
+  dispatchLocation: (v: string) => void;
 }
 
-const Filters = (props: Props) => {
+const Filters = ({
+  location,
+  isFullTime,
+  dispatchIsFullTime,
+  dispatchLocation,
+}: Props) => {
   return (
     <Wrapper>
-      <FullTime {...props} />
-      <LocationFilter />
+      <FullTime
+        dispatchIsFullTime={dispatchIsFullTime}
+        isFullTime={isFullTime}
+      />
+      <LocationFilter location={location} dispatchLocation={dispatchLocation} />
     </Wrapper>
   );
 };
