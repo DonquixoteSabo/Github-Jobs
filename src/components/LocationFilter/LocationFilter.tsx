@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 //styles
 import { Input } from 'components/Input';
 import { Form, Title } from './LocationFilter.styles';
 //icons
 import { BiWorld } from 'react-icons/bi';
 import { useState } from 'react';
+import _ from 'lodash';
 
 interface Props {
   location: string;
@@ -29,9 +30,14 @@ const LocationFilter = ({ location, dispatchLocation }: Props) => {
     setActiveCities(newCities);
   };
 
-  useEffect(() => {
-    dispatchLocation(inputValue);
-  }, [inputValue, dispatchLocation]);
+  const debounce = useCallback(
+    _.debounce((searchVal: string) => {
+      dispatchLocation(searchVal);
+    }, 1000),
+    []
+  );
+
+  useEffect(() => debounce(inputValue), [inputValue]);
 
   return (
     <>

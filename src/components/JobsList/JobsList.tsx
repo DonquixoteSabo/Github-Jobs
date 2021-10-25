@@ -9,14 +9,16 @@ import { Wrapper } from './JobList.styles';
 interface Props {
   search: string;
   isFullTime: boolean;
+  location: string;
 }
 
-function JobsList({ search, isFullTime }: Props) {
+function JobsList({ search, isFullTime, location }: Props) {
   const { data, isLoading, isError, error } = useGetJobsQuery({
     search,
     isFullTime,
+    location,
   });
-
+  // console.log('location w jobs list', location);
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) {
     console.log(error);

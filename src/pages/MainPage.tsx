@@ -10,7 +10,6 @@ function MainPage() {
   const [search, setSearch] = useState('');
   const [isFullTime, setIsFullTime] = useState(false);
   const [location, setLocation] = useState('');
-  console.log(location);
 
   const dispatchIsFullTime = (value: boolean) => setIsFullTime(value);
   const dispatchSearch = (search: string) => setSearch(search);
@@ -25,7 +24,7 @@ function MainPage() {
         dispatchIsFullTime={dispatchIsFullTime}
         dispatchLocation={dispatchLocation}
       />
-      <JobsList search={search} isFullTime={isFullTime} />
+      <JobsList search={search} isFullTime={isFullTime} location={location} />
     </Wrapper>
   );
 }

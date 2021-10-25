@@ -4,6 +4,7 @@ import { Job } from 'types/Job';
 export interface Filters {
   search: string;
   isFullTime: boolean;
+  location: string;
 }
 
 export const jobsApi = createApi({
@@ -18,8 +19,11 @@ export const jobsApi = createApi({
         } else {
           link += '/all?';
         }
+        if (filters.location) {
+          link += `location=${filters.location}&`;
+        }
         if (filters.isFullTime) link += 'fulltime=true';
-
+        console.log(link);
         return link;
       },
     }),

@@ -3,7 +3,7 @@ import { Job } from 'types/Job';
 export const jobs: Job[] = [
   {
     id: 1,
-    type: 'Fulltime',
+    type: 'Full Time',
     createdAt: '13.01.2021',
     company: 'Tagcat',
     location: 'Podolsk',

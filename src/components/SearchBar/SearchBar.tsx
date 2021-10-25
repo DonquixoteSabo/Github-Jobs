@@ -9,6 +9,8 @@ interface Props {
   dispatchSearch: (arg: string) => void;
 }
 
+// TODO use debounce like in locationFilter instead of button
+
 const SearchBar = ({ dispatchSearch }: Props) => {
   const [inputValue, setInputValue] = useState('');
 
