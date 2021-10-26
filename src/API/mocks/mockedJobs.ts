@@ -1,4 +1,4 @@
-import { Job } from 'types/Job';
+import { Job } from 'store/jobs';
 
 export const jobs: Job[] = [
   {

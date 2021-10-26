@@ -1,9 +1,18 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Job } from 'types/Job';
 
 export interface Filters {
   search: string;
   isFullTime: boolean;
+  location: string;
+}
+
+export interface Job {
+  id: number;
+  type: string;
+  title: string;
+  company: string;
+  companyLogo?: string | null;
+  createdAt: string;
   location: string;
 }
 

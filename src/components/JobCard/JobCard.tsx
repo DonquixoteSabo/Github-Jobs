@@ -5,7 +5,7 @@ import { AiOutlineClockCircle } from 'react-icons/ai';
 //styles
 import { CardWrapper, CardLogo, CardBody, CardInfo } from './JobCard.styles';
 //types
-import { Job } from 'types/Job';
+import { Job } from 'store/jobs';
 
 function JobCard({
   type,

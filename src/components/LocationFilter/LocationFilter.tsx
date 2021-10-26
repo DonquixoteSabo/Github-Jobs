@@ -1,11 +1,10 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import _ from 'lodash';
 //styles
 import { Input } from 'components/Input';
 import { Form, Title } from './LocationFilter.styles';
 //icons
 import { BiWorld } from 'react-icons/bi';
-import { useState } from 'react';
-import _ from 'lodash';
 
 interface Props {
   location: string;
