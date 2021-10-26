@@ -22,7 +22,7 @@ function Root() {
         <Router>
           <MainTemplate>
             <Switch>
-              <Route path="/job">
+              <Route path="/job/:id">
                 <JobPage />
               </Route>
               <Route path="/">

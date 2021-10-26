@@ -36,9 +36,12 @@ export const jobsApi = createApi({
         return link;
       },
     }),
+    getOneJob: builder.query<Job, string>({
+      query: (id) => `job/${id}`,
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetJobsQuery } = jobsApi;
+export const { useGetJobsQuery, useGetOneJobQuery } = jobsApi;

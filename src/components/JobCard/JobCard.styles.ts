@@ -1,6 +1,7 @@
-//styles
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-export const CardWrapper = styled.div`
+
+export const CardWrapper = styled(Link)`
   width: 100%;
   display: grid;
   grid-template-columns: 90px auto 1fr;
@@ -13,6 +14,7 @@ export const CardWrapper = styled.div`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   margin: 25px 0;
+  text-decoration: none;
   @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
     grid-template-columns: 90px 1fr auto;
   }

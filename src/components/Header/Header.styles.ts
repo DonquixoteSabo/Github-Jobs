@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Logo = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.xxl};
@@ -7,4 +8,8 @@ export const Logo = styled.h1`
   strong {
     font-weight: 700;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

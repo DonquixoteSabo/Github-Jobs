@@ -17,7 +17,7 @@ function JobCard({
   id,
 }: Job) {
   return (
-    <CardWrapper>
+    <CardWrapper to={`/job/${id}`}>
       {companyLogo ? (
         <CardLogo src={companyLogo + id} alt={`${company} logo`} />
       ) : (
