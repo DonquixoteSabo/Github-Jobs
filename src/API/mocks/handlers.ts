@@ -1,25 +1,67 @@
-import { ALL_ORIGIN } from 'API/allOrigin';
 import { rest } from 'msw';
-import { Api_data } from 'types/ApiData';
-//types
-import { Job } from 'types/Job';
+//data
+import { jobs } from './mockedJobs';
+import { filter } from 'lodash';
 
-export const handlers = [
-  rest.get('/jobs', async (req, res, ctx) => {
-    const response: Response = await ctx.fetch(
-      `${ALL_ORIGIN}https://jobs.github.com/positions.json?description=ruby&page=1`
+// TODO
+// REFACTOR ENDPOINTS
+// instead of /jobs/:searchValue use /jobs?search=?value
+// to show only fulltime jobs use /jobs?fulltime=true
+// to filter by city, state or country use /jobs?city=value
+// to use dots under location input use /jobs?location=value
+//ofc at the very end it may look like: /jobs?search=example&fulltime=true%city=442&location=new-york
+
+const filterJobs = ({
+  location,
+  isFullTime,
+  value = null,
+}: {
+  location: string | null;
+  isFullTime: string | null;
+  value?: string | null;
+}) => {
+  let filteredJobs = jobs;
+
+  if (location) {
+    filteredJobs = filteredJobs.filter((job) =>
+      job.location.toLowerCase().includes(location.toLowerCase())
     );
-    const data: Api_data[] = await response.json();
-    // Our api uses snake case instead of camel case so we have to change it in this awful way.
-    const jobs: Job[] = data.map((job) => ({
-      company: job.company,
-      companyLogo: job.company_logo,
-      createdAt: job.created_at,
-      id: job.id,
-      location: job.location,
-      title: job.title,
-      type: job.type,
-    }));
-    return res(ctx.json(jobs));
+  }
+
+  if (isFullTime) {
+    filteredJobs = filteredJobs?.filter((job) => job.type === 'Full Time');
+  }
+
+  if (value) {
+    filteredJobs = filteredJobs.filter((job) =>
+      job.title.toLowerCase().includes(value!.toLowerCase())
+    );
+  }
+
+  return filteredJobs;
+};
+
+enum Params {
+  fulltime = 'fulltime',
+  location = 'location',
+  value = 'search',
+}
+
+// Due to changes in github API I decide to mock jobs response
+export const handlers = [
+  rest.get('/jobs/all', (req, res, ctx) => {
+    const isFullTime = req.url.searchParams.get(Params.fulltime);
+    const location = req.url.searchParams.get(Params.location);
+    let filteredJobs = filterJobs({ isFullTime, location });
+
+    return res(ctx.json(filteredJobs));
+  }),
+  rest.get('/jobs', (req, res, ctx) => {
+    const value = req.url.searchParams.get(Params.value);
+    const isFullTime = req.url.searchParams.get(Params.fulltime);
+    const location = req.url.searchParams.get(Params.location);
+    let filteredJobs = filterJobs({ isFullTime, location, value });
+
+    return res(ctx.json(filteredJobs));
   }),
 ];

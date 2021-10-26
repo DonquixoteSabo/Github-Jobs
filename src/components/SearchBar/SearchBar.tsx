@@ -1,25 +1,30 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import _ from 'lodash';
 //styles
-import { Wrapper, Button } from './SearchBar.styles';
+import { Wrapper } from './SearchBar.styles';
 import { Input } from 'components/Input';
 //icons
 import { BiShoppingBag } from 'react-icons/bi';
-//redux-setup
-import { useAppDispatch } from 'hooks/reduxHook';
-import { filterJobs } from 'redux/actions';
 
-const SearchBar = () => {
+interface Props {
+  dispatchSearch: (arg: string) => void;
+}
+
+const SearchBar = ({ dispatchSearch }: Props) => {
   const [inputValue, setInputValue] = useState('');
-  const dispatch = useAppDispatch();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    dispatch(filterJobs(inputValue));
-    setInputValue('');
-  };
+  const debounce = useCallback(
+    _.debounce((searchVal: string) => {
+      dispatchSearch(searchVal);
+    }, 1000),
+    []
+  );
+
+  useEffect(() => debounce(inputValue), [inputValue]);
+
   return (
     <Wrapper>
-      <form className="input-wrapper" onSubmit={handleSubmit} role="search">
+      <form className="input-wrapper" role="search">
         <div>
           <BiShoppingBag className="icon" />
           <Input
@@ -31,7 +36,6 @@ const SearchBar = () => {
             }
           />
         </div>
-        <Button type="submit">Search</Button>
       </form>
     </Wrapper>
   );

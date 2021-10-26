@@ -2,24 +2,31 @@ import React from 'react';
 //components
 import { FullTime } from 'components/FullTime/FullTime';
 import { LocationFilter } from 'components/LocationFilter/LocationFilter';
+//style
+import { Wrapper } from './Filters.style';
 
-import styled from 'styled-components';
+interface Props {
+  isFullTime: boolean;
+  location: string;
+  dispatchIsFullTime: (v: boolean) => void;
+  dispatchLocation: (v: string) => void;
+}
 
-export const Wrapper = styled.section`
-  grid-template-columns: 1/-1;
-  @media (min-width: ${({ theme }) => theme.breakpoints.l}) {
-    grid-template-columns: 1/2;
-    grid-row: 2/3;
-  }
-`;
-
-function Filters() {
+const Filters = ({
+  location,
+  isFullTime,
+  dispatchIsFullTime,
+  dispatchLocation,
+}: Props) => {
   return (
     <Wrapper>
-      <FullTime />
-      <LocationFilter />
+      <FullTime
+        dispatchIsFullTime={dispatchIsFullTime}
+        isFullTime={isFullTime}
+      />
+      <LocationFilter location={location} dispatchLocation={dispatchLocation} />
     </Wrapper>
   );
-}
+};
 
 export { Filters };

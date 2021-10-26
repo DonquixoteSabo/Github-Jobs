@@ -1,28 +1,35 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 //components
 import { JobCard } from 'components/JobCard/JobCard';
 //hooks
-import { useAppDispatch, useAppSelector } from 'hooks/reduxHook';
-import { fetchAllJobs } from 'API/fetchAllJobs';
+import { useGetJobsQuery } from '../../store/jobs';
 //styles
 import { Wrapper } from './JobList.styles';
 
-function JobsList() {
-  const { filteredJobs: jobs } = useAppSelector((state) => state.jobs);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    (async () => {
-      await dispatch(fetchAllJobs());
-    })();
-  }, [dispatch]);
+interface Props {
+  search: string;
+  isFullTime: boolean;
+  location: string;
+}
+
+function JobsList({ search, isFullTime, location }: Props) {
+  const { data, isLoading, isError, error } = useGetJobsQuery({
+    search,
+    isFullTime,
+    location,
+  });
+  // console.log('location w jobs list', location);
+  if (isLoading) return <h1>Loading...</h1>;
+  if (isError) {
+    console.log(error);
+    return <h1>Something went wrong. Please refresh the page.</h1>;
+  }
   return (
     <Wrapper>
       <ul>
-        {jobs.length > 0 ? (
-          jobs.map((job) => <JobCard key={job.id} {...job} />)
-        ) : (
-          <h1>Loading...</h1>
-        )}
+        {data?.map((job) => (
+          <JobCard key={job.id} {...job} />
+        ))}
       </ul>
     </Wrapper>
   );

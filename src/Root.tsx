@@ -11,7 +11,7 @@ import { MainTemplate } from 'templates/MainTemplate';
 import { JobPage } from 'pages/JobPage';
 import { MainPage } from 'pages/MainPage';
 //redux
-import { store } from 'redux/store';
+import { store } from 'store';
 import { Provider } from 'react-redux';
 
 function Root() {
