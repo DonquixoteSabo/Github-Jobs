@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import _ from 'lodash';
+import React, { useEffect, useMemo, useState } from 'react';
+import { debounce } from 'lodash';
 //styles
 import { Input } from 'components/Input';
 import { Form, Title } from './LocationFilter.styles';
@@ -29,14 +29,18 @@ const LocationFilter = ({ location, dispatchLocation }: Props) => {
     setActiveCities(newCities);
   };
 
-  const debounce = useCallback(
-    _.debounce((searchVal: string) => {
-      dispatchLocation(searchVal);
-    }, 1000),
-    []
+  const debouncedLocation = useMemo(
+    () =>
+      debounce((val) => {
+        dispatchLocation(val);
+      }, 400),
+    [dispatchLocation]
   );
 
-  useEffect(() => debounce(inputValue), [inputValue]);
+  useEffect(
+    () => debouncedLocation(inputValue),
+    [inputValue, debouncedLocation]
+  );
 
   return (
     <>

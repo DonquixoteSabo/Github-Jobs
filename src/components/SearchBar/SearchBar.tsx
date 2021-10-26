@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import _ from 'lodash';
+import React, { useEffect, useMemo, useState } from 'react';
+import { debounce } from 'lodash';
 //styles
 import { Wrapper } from './SearchBar.styles';
 import { Input } from 'components/Input';
@@ -13,14 +13,15 @@ interface Props {
 const SearchBar = ({ dispatchSearch }: Props) => {
   const [inputValue, setInputValue] = useState('');
 
-  const debounce = useCallback(
-    _.debounce((searchVal: string) => {
-      dispatchSearch(searchVal);
-    }, 1000),
-    []
+  const debouncedSearch = useMemo(
+    () =>
+      debounce((val) => {
+        dispatchSearch(val);
+      }, 400),
+    [dispatchSearch]
   );
 
-  useEffect(() => debounce(inputValue), [inputValue]);
+  useEffect(() => debouncedSearch(inputValue), [inputValue, debouncedSearch]);
 
   return (
     <Wrapper>
