@@ -11,7 +11,7 @@ export const CardWrapper = styled(Link)`
   border-radius: 4px;
   background-color: white;
   padding: 12px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   cursor: pointer;
   margin: 25px 0;
   text-decoration: none;

@@ -1,10 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+//hooks
 import { useGetOneJobQuery } from '../store/jobs';
+
 interface RouteParams {
   id: string;
 }
-export function JobPage() {
+export const JobPage = () => {
   const { id } = useParams<RouteParams>();
   const { data, isLoading, isError, error } = useGetOneJobQuery(id);
   if (isLoading) return <h1>'Loading...'</h1>;
@@ -17,5 +19,10 @@ export function JobPage() {
     );
   }
   console.log(data);
-  return <div>Job page: {id}</div>;
-}
+  return (
+    <div>
+      Job page: {id}
+      hello {data?.title}
+    </div>
+  );
+};

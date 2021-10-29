@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import backgroundImg from 'assets/img/backgroundImg.png';
+
 export const Wrapper = styled.section`
   width: 100%;
   height: 150px;
@@ -18,7 +19,7 @@ export const Wrapper = styled.section`
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     div {
       display: flex;
       align-items: center;
