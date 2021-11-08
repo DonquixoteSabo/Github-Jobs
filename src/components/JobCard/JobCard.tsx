@@ -3,7 +3,8 @@ import React from 'react';
 import { BiWorld } from 'react-icons/bi';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 //styles
-import { CardWrapper, CardLogo, CardBody, CardInfo } from './JobCard.styles';
+import { CardBody, CardInfo, CardLogo, CardWrapper } from './JobCard.styles';
+import { Type } from 'components/Type';
 //types
 import { Job } from 'store/jobs';
 
@@ -25,9 +26,7 @@ const JobCard = ({
     <CardBody>
       <h3 className="company">{company}</h3>
       <h1 className="title">{title}</h1>
-      <div className="type">
-        <p className="company">{type}</p>
-      </div>
+      <Type type={type} />
     </CardBody>
     <CardInfo>
       <div>

@@ -30,31 +30,12 @@ export const CardBody = styled.div`
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.chambray};
 
-  .company {
-    font-weight: 600;
-    font-size: ${({ theme }) => theme.fontSize.s};
-    @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
-      font-size: ${({ theme }) => theme.fontSize.m};
-    }
-  }
   .title {
     font-weight: 400;
+    margin: 0.5em 0;
     font-size: ${({ theme }) => theme.fontSize.xl};
     @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
       font-size: ${({ theme }) => theme.fontSize.xxl};
-    }
-  }
-  .type {
-    width: 75px;
-    height: 26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid ${({ theme }) => theme.colors.chambray};
-    border-radius: 4px;
-    @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
-      width: 85px;
-      height: 30px;
     }
   }
 `;
@@ -65,12 +46,15 @@ export const CardInfo = styled.div`
   font-weight: 500;
   font-size: ${({ theme }) => theme.fontSize.s};
   color: #b9bdcf;
+
   div {
     display: flex;
+
     p {
       margin-left: 10px;
     }
   }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
     grid-column: 3/4;
     margin-top: auto;

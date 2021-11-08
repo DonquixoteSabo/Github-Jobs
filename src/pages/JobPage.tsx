@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom';
 //hooks
 import { useGetOneJobQuery } from '../store/jobs';
 //styles
-import {Wrapper, StyledLink} from './JobPage.styles';
+import { Section, StyledLink, Title, Wrapper } from './JobPage.styles';
 import { BsArrowLeft } from 'react-icons/bs';
+import { Type } from 'components/Type';
 
 interface RouteParams {
   id: string;
@@ -23,22 +24,23 @@ export const JobPage = () => {
     );
   }
   console.log(data);
-  const {title, company} = data!;
+  const { title, company, type } = data!;
   return (
     <Wrapper>
-        <StyledLink to='/' >
-          <BsArrowLeft />
-          <span>Back to search</span>
-        </StyledLink>
+      <StyledLink to="/">
+        <BsArrowLeft />
+        <span>Back to search</span>
+      </StyledLink>
       <div>
-       <span className='apply'>How to apply</span> <br />
-        Please email a copy of your resume and online portfolio to <span className='email'>{`${company}@gmail.com`}</span>
+        <span className="apply">How to apply</span> <br />
+        Please email a copy of your resume and online portfolio to{' '}
+        <span className="email">{`${company}@gmail.com`}</span>
       </div>
-      <div>
-        Job page: {id}
-        hello {data?.title}
-        FRONT_eND SOFTWARE
-      </div>
+      <Section>
+        <Title>{title}</Title>
+        {type === 'Full Time' && <Type margin={1} />}
+      </Section>
     </Wrapper>
   );
 };
+ 
