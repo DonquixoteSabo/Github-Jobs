@@ -35,7 +35,7 @@ const JobCard = ({
       </div>
       <div>
         <AiOutlineClockCircle />
-        <p className="time">{createdAt}</p>
+        <p>{createdAt}</p>
       </div>
     </CardInfo>
   </CardWrapper>

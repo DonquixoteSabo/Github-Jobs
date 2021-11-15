@@ -3,9 +3,19 @@ import { useParams } from 'react-router-dom';
 //hooks
 import { useGetOneJobQuery } from '../store/jobs';
 //styles
-import { Section, StyledLink, Title, Wrapper } from './JobPage.styles';
+import {
+  Header,
+  Logo,
+  Section,
+  Small,
+  StyledLink,
+  Title,
+  Wrapper,
+} from './JobPage.styles';
 import { BsArrowLeft } from 'react-icons/bs';
 import { Type } from 'components/Type';
+import { AiOutlineClockCircle } from 'react-icons/ai';
+import { BiWorld } from 'react-icons/bi';
 
 interface RouteParams {
   id: string;
@@ -24,7 +34,7 @@ export const JobPage = () => {
     );
   }
   console.log(data);
-  const { title, company, type } = data!;
+  const { title, company, type, createdAt, companyLogo, location } = data!;
   return (
     <Wrapper>
       <StyledLink to="/">
@@ -37,9 +47,28 @@ export const JobPage = () => {
         <span className="email">{`${company}@gmail.com`}</span>
       </div>
       <Section>
-        <Title>{title}</Title>
-        {type === 'Full Time' && <Type margin={1} />}
+        <div>
+          <Title>{title}</Title>
+          {type === 'Full Time' && <Type margin={1} />}
+        </div>
+        <Small>
+          <AiOutlineClockCircle />
+          <span>{createdAt}</span>
+        </Small>
       </Section>
+      <article>
+        <Header>
+          <Logo
+            src={companyLogo ? companyLogo : 'https://i.imgur.com/Poiq6cC.png'}
+            alt={companyLogo ? 'Company logo' : 'Company logo not found'}
+          />
+          <h1>{title}</h1>
+          <Small>
+            <BiWorld />
+            {location}
+          </Small>
+        </Header>
+      </article>
     </Wrapper>
   );
 };

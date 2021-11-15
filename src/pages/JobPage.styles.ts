@@ -61,7 +61,20 @@ export const Small = styled.small`
 `;
 
 export const Header = styled.header`
-  display: flex;
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: 21px 14px;
+  grid-gap: 15px 6px;
+
+  small {
+    grid-column: 2/-1;
+    color: ${({ theme }) => theme.colors.heather100};
+  }
+
+  h1 {
+    font-size: ${({ theme }) => theme.fontSize.l};
+    font-weight: 600;
+  }
 `;
 
 export const Logo = styled.img`
