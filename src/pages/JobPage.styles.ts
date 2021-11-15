@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 2em;
   margin-top: 40px;
-  font-size: 0.8rem;
+  font-size: ${({ theme }) => theme.fontSize.s};
   font-style: normal;
   font-weight: 500;
   line-height: 21px;
@@ -41,6 +41,6 @@ export const Section = styled.section`
 
 export const Title = styled.header`
   font-weight: bold;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.fontSize.xxl};
   line-height: 28px;
 `;

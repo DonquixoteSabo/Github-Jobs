@@ -45,7 +45,7 @@ export const CardInfo = styled.div`
   justify-content: space-between;
   font-weight: 500;
   font-size: ${({ theme }) => theme.fontSize.s};
-  color: #b9bdcf;
+  color: ${({ theme }) => theme.colors.heather};
 
   div {
     display: flex;
