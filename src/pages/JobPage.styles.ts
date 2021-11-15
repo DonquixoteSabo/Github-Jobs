@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 2em;
   margin-top: 40px;
-  font-size: 0.8rem;
+  font-size: ${({ theme }) => theme.fontSize.s};
   font-style: normal;
   font-weight: 500;
   line-height: 21px;
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
   .apply {
     display: block;
-    color: ${({ theme }) => theme.colors.heather};
+    color: ${({ theme }) => theme.colors.heather100};
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 0.1em;
@@ -41,6 +41,30 @@ export const Section = styled.section`
 
 export const Title = styled.header`
   font-weight: bold;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.fontSize.xxl};
   line-height: 28px;
+`;
+
+export const Small = styled.small`
+  font-size: ${({ theme }) => theme.fontSize.s};
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0;
+  text-align: left;
+  color: ${({ theme }) => theme.colors.heather100};
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 0.3rem;
+  }
+`;
+
+export const Header = styled.header`
+  display: flex;
+`;
+
+export const Logo = styled.img`
+  width: 100%;
+  border-radius: 4px;
 `;

@@ -20,17 +20,20 @@ export const Wrapper = styled.section`
     align-items: center;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
     div {
       display: flex;
       align-items: center;
       margin-left: 20px;
       width: 100%;
     }
+
     .icon {
-      color: ${({ theme }) => theme.colors.heather};
+      color: ${({ theme }) => theme.colors.heather100};
       font-weight: 400;
       font-size: ${({ theme }) => theme.fontSize.xl};
     }
+
     @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
       width: 75%;
     }
