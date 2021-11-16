@@ -9,7 +9,7 @@ export const MainTemplate = ({ children }: { children: ReactNode }) => (
     <Header />
     {children}
     <Footer>
-      created by
+      created by{' '}
       <a
         href="https://github.com/DonquixoteSabo"
         target="_blank"

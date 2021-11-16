@@ -24,14 +24,42 @@ export const Wrapper = styled.div`
   .email {
     color: ${({ theme }) => theme.colors.blue};
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto auto;
+
+    .title {
+      display: flex;
+      align-items: center;
+    }
+
+    .container {
+      justify-content: start;
+      padding-right: 1em;
+    }
+  }
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.blue};
+  padding: 2em 2em 2em 0;
 
   span {
     margin-left: 1em;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+    grid-column: 1/2;
+    grid-row: 1/2;
   }
 `;
 
@@ -43,6 +71,11 @@ export const Title = styled.header`
   font-weight: bold;
   font-size: ${({ theme }) => theme.fontSize.xxl};
   line-height: 28px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
+    font-size: 32px;
+    margin-right: 1em;
+  }
 `;
 
 export const Small = styled.small`
@@ -65,7 +98,7 @@ export const Header = styled.header`
   grid-template-columns: 50px auto;
   grid-template-rows: 21px 14px;
   grid-gap: 15px 6px;
-  margin: 1em 0;
+  margin: 3em 0;
 
   small {
     grid-column: 2/-1;
