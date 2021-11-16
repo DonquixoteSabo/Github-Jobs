@@ -5,7 +5,8 @@ const theme: DefaultTheme = {
   colors: {
     blue: '#1E86FF',
     steelGray: '#282538',
-    heather: '#B9BDCF',
+    heather100: '#B9BDCF',
+    heather200: '#B7BCCE',
     chambray: '#334680',
   },
   fontSize: {
@@ -14,7 +15,7 @@ const theme: DefaultTheme = {
     m: '16px',
     l: '18px',
     xl: '20px',
-    xxl: '22px',
+    xxl: '24px',
   },
   breakpoints: {
     sm: '576px',

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import backgroundImg from 'assets/img/backgroundImg.png';
+
 export const Wrapper = styled.section`
   width: 100%;
   height: 150px;
@@ -18,18 +19,21 @@ export const Wrapper = styled.section`
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
     div {
       display: flex;
       align-items: center;
       margin-left: 20px;
       width: 100%;
     }
+
     .icon {
-      color: ${({ theme }) => theme.colors.heather};
+      color: ${({ theme }) => theme.colors.heather100};
       font-weight: 400;
       font-size: ${({ theme }) => theme.fontSize.xl};
     }
+
     @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
       width: 75%;
     }

@@ -1,7 +1,6 @@
 import { rest } from 'msw';
 //data
 import { jobs } from './mockedJobs';
-import { filter } from 'lodash';
 
 // TODO
 // REFACTOR ENDPOINTS
@@ -63,5 +62,11 @@ export const handlers = [
     let filteredJobs = filterJobs({ isFullTime, location, value });
 
     return res(ctx.json(filteredJobs));
+  }),
+  rest.get('/jobs/job/:id', (req, res, ctx) => {
+    const { id } = req.params;
+    const job = jobs.filter((job) => job.id.toString() === id);
+    console.log(job);
+    return res(ctx.json(job[0]));
   }),
 ];

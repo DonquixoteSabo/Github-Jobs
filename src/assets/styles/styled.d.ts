@@ -7,7 +7,8 @@ declare module 'styled-components' {
     colors: {
       blue: string;
       steelGray: string;
-      heather: string;
+      heather100: string;
+      heather200: string;
       chambray: string;
     };
     fontSize: {

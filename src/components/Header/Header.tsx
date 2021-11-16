@@ -1,9 +1,9 @@
-import { Logo } from './Header.styles';
+import { Logo, StyledLink } from './Header.styles';
 
-export function Header() {
-  return (
-    <Logo>
+export const Header = () => (
+  <Logo>
+    <StyledLink to="">
       <strong>Github</strong> jobs
-    </Logo>
-  );
-}
+    </StyledLink>
+  </Logo>
+);

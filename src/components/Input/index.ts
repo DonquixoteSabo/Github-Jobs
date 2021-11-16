@@ -5,11 +5,13 @@ export const Input = styled.input`
   border: none;
   outline: none;
   width: 100%;
+
   &::placeholder {
     font-weight: 400;
     font-size: ${({ theme }) => theme.fontSize.xs};
-    color: ${({ theme }) => theme.colors.heather};
+    color: ${({ theme }) => theme.colors.heather100};
   }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.m}) {
     padding: 20px 25px;
     &::placeholder {

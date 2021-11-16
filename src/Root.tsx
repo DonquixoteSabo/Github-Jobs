@@ -1,10 +1,9 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //styled-components setup
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
-//react-router-dom setup
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //templates
 import { MainTemplate } from 'templates/MainTemplate';
 //pages
@@ -22,7 +21,7 @@ function Root() {
         <Router>
           <MainTemplate>
             <Switch>
-              <Route path="/job">
+              <Route path="/job/:id">
                 <JobPage />
               </Route>
               <Route path="/">

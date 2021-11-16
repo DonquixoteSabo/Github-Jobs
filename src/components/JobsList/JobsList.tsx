@@ -12,13 +12,13 @@ interface Props {
   location: string;
 }
 
-function JobsList({ search, isFullTime, location }: Props) {
+const JobsList = ({ search, isFullTime, location }: Props) => {
   const { data, isLoading, isError, error } = useGetJobsQuery({
     search,
     isFullTime,
     location,
   });
-  // console.log('location w jobs list', location);
+
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) {
     console.log(error);
@@ -33,6 +33,6 @@ function JobsList({ search, isFullTime, location }: Props) {
       </ul>
     </Wrapper>
   );
-}
+};
 
 export { JobsList };
