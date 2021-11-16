@@ -65,6 +65,7 @@ export const Header = styled.header`
   grid-template-columns: 50px auto;
   grid-template-rows: 21px 14px;
   grid-gap: 15px 6px;
+  margin: 1em 0;
 
   small {
     grid-column: 2/-1;
@@ -80,4 +81,16 @@ export const Header = styled.header`
 export const Logo = styled.img`
   width: 100%;
   border-radius: 4px;
+`;
+
+export const Article = styled.article`
+  font-family: Roboto, Poppins, Arial, sans-serif;
+  font-size: ${({ theme }) => theme.fontSize.m};
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+
+  p {
+    margin: 1em 0;
+  }
 `;
