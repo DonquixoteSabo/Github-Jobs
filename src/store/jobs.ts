@@ -32,7 +32,6 @@ export const jobsApi = createApi({
           link += `location=${filters.location}&`;
         }
         if (filters.isFullTime) link += 'fulltime=true';
-        console.log(link);
         return link;
       },
     }),
