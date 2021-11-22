@@ -51,6 +51,7 @@ const LocationFilter = ({ location, dispatchLocation }: Props) => {
           <Input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            placeholder="City"
           />
         </div>
         {activeCities.map((city) => (
