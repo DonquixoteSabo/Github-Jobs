@@ -21,7 +21,7 @@ const Wrapper = styled.div<WrapperProps>`
     height: 30px;
   }
 `;
- 
+
 interface Props {
   type?: string;
   margin?: number;

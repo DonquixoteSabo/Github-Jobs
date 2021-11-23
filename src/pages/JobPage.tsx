@@ -129,5 +129,4 @@ export const JobPage = () => {
       </div>
     </Wrapper>
   );
-};
- 
+};  

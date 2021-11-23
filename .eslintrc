@@ -5,12 +5,15 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     "prettier/prettier": [
       "warn",
       {
         "singleQuote": true,
+        "tabWidth": 2,
         "endOfLine": "auto"
       }
     ]

@@ -9,9 +9,7 @@ import { BiShoppingBag } from 'react-icons/bi';
 interface Props {
   dispatchSearch: (arg: string) => void;
 }
-
-//todo Write func that add inputValue to local storage. I want to be able to show user the previous searches after returning from job page.
-
+ 
 const SearchBar = ({ dispatchSearch }: Props) => {
   const [inputValue, setInputValue] = useState('');
 

@@ -126,4 +126,4 @@ export const Article = styled.article`
   p {
     margin: 1em 0;
   }
-`;
+`; 

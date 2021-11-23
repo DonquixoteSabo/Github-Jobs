@@ -1,10 +1,13 @@
-import { fireEvent, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import {
+  fireEvent,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 //helpers
 import { renderWithProviders } from 'helpers/renderWithProviders';
 //components
 import { MainPage } from './MainPage';
 
-//todo in searchBar component u have tests that should be here
 describe('MainPage', () => {
   it("filters jobs and doesn't care about letter case", async () => {
     renderWithProviders(<MainPage />);
