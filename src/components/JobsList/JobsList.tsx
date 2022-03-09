@@ -22,7 +22,15 @@ const JobsList = ({ search, isFullTime, location }: Props) => {
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) {
     console.log(error);
-    return <h1>Something went wrong. Please refresh the page.</h1>;
+    return (
+      <h1>
+        Note: This project used github-jobs API. Because this API was deprecated
+        I had to use MSW. Unluckily, I cannot use MSW on production so to see
+        results, you have to{' '}
+        <a href="https://github.com/DonquixoteSabo/Github-Jobs">download</a>{' '}
+        this project.
+      </h1>
+    )
   }
   return (
     <Wrapper>
