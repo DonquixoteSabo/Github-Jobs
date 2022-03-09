@@ -1,22 +1,22 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">GitHub Jobs</h1>
 
 <div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+   Solution for a challenge from  <a href="https://devchallenges.io" target="_blank">Devchallenges.io</a>.
 </div>
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://donquixotesabo.github.io/Github-Jobs/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/DonquixoteSabo/Github-Jobs">
       Solution
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps">
+    <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
       Challenge
     </a>
   </h3>
@@ -31,34 +31,41 @@
 - [Features](#features)
 - [How to use](#how-to-use)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://i.imgur.com/icVPq71.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+- Use RTK to cache the data from API
+- Use react-testing-library to test redux
+- Use MSW to mock API responses and test them
+- Use more advanced typescript 
+- Handle styles with styled-components
+- use Lodash to dynamic update data
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
+- [React Redux](https://react-redux.js.org/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Mock Service Worker](https://mswjs.io/)
+- [Lodash](https://lodash.com/)
+- [styled-components](https://styled-components.com/)
 
 ## Features
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv) was to build an application to complete the given user stories.
+In the beginning, this site was using GitHub API. Unluckily, this API is no longer available so I was forced to use some kind of service worker to mock the data. That's why this project doesn't work on the production.
+To check this project and run all tests you have to copy this repo.
+
 
 ## How To Use
 
@@ -75,18 +82,13 @@ $ npm install
 
 # Run the app
 $ npm start
+
+# Run tests
+$ npm run test
 ```
 
-## Acknowledgements
-
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- GitHub [Kamil Budzik](https://github.com/DonquixoteSabo/)
+- Portfolio [Kamil Budzik](https://github.com/DonquixoteSabo/)
