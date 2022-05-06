@@ -16,7 +16,7 @@
       Solution
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
+    <a href="https://devchallenges.io/challenges/TtUjDt19eIHxNQ4n5jps">
       Challenge
     </a>
   </h3>
@@ -91,4 +91,4 @@ $ npm run test
 ## Contact
 
 - GitHub [Kamil Budzik](https://github.com/DonquixoteSabo/)
-- Portfolio [Kamil Budzik](https://github.com/DonquixoteSabo/)
+- Portfolio [Kamil Budzik](https://kamil-budzik.com/)
