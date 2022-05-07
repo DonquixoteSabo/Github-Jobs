@@ -90,5 +90,5 @@ $ npm run test
 
 ## Contact
 
-- GitHub [Kamil Budzik](https://github.com/DonquixoteSabo/)
+- GitHub [Kamil Budzik](https://github.com/Kamil-Budzik/)
 - Portfolio [Kamil Budzik](https://kamil-budzik.com/)
